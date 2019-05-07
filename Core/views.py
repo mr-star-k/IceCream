@@ -113,7 +113,7 @@ class RegistrationView(FormView):
 
     form_class = RegistrationForm
     
-    event = Event.objects.filter(active=True).first()
+    event = Event.objects.get(active=True)
 
     def post(self, request, *args, **kwargs):
         alert = ''
